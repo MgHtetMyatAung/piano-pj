@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MMS IT PIANO</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metatags.io/" />
+    <meta property="og:title" content="piano project" />
+    <meta property="og:description" content="js advance , bootstrap " />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1601312378427-822b2b41da35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .key {
+        transition: 0.5s;
+      }
+      .key:active,
+      .key.active {
+        background-color: rgb(223, 220, 220);
+      }
+
+      #keyboard {
+        border-right: 5px solid black !important;
+        border-left: 5px solid black !important;
+      }
+
+      #textNote {
+        border: 10px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container pt-5">
+      <h5 class="text-center">
+        MMS IT PIANO <i class="bi bi-music-note-beamed"></i>
+      </h5>
+      <div class="row" id="textNote">
+        <div class="col-10 col-md-11 p-0">
+          <textarea
+            name=""
+            id="text"
+            cols="30"
+            rows="2"
+            class="form-control w-100 pe-none text-black-50 h-100"
+          ></textarea>
+        </div>
+        <div class="col-2 col-md-1 p-0">
+          <div class="bg-dark p-1">
+            <button class="btn btn-primary btn-sm w-100 mb-1" id="saveBtn">
+              Save
+            </button>
+            <button class="btn btn-danger btn-sm w-100" id="clearBtn">
+              Clear
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row border" id="keyboard"></div>
+      <div class="row mt-3">
+        <div class="col px-2 p-md-0">
+          <div
+            class="d-none align-items-center justify-content-between"
+            id="noteLists"
+          >
+            <i class="bi bi-music-note-list"></i>
+            <span class="text-sm">Sound Note Lists</span>
+            <span class="badge bg-dark" id="listCount">0</span>
+          </div>
+          <ul id="recordLists" class="list-unstyled mt-3"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./piano.js"></script>
+  </body>
+</html>
